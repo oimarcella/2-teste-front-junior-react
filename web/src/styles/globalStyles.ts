@@ -23,7 +23,8 @@ export default createGlobalStyle`
   
   body{
     max-height:100vh;
-    background: #ebebeb;
+    min-width:656px;
+    background: #f0f0f0;
     color:#403f3f;
     -webkit-font-smoothing:antialiased;
   }

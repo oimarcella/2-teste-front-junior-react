@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RiArrowDownSFill } from 'react-icons/ri'
 import { Container } from './styles';
 
@@ -6,21 +6,27 @@ interface ListContainerProps {
   class?: string;
   name: string;
   text?: string;
+  openList?: boolean;
 }
 
-const ListContainer: React.FC<ListContainerProps> = (props) => {
+const ListContainer: React.FC<ListContainerProps> = ({ openList = false, ...rest }) => {
+  const [isActiveList, setIsActiveList] = useState(openList);
+
   return (
-    <Container className={props.class}>
+    <Container className={rest.class}>
       <div>
-        <strong>{props.name}</strong>
-        <span>
-          <p>{props.text}</p>
+        <strong>{rest.name}</strong>
+        <span onClick={() => setIsActiveList(!isActiveList)}>
+          <p>{rest.text}</p>
           <RiArrowDownSFill size={15} />
         </span>
       </div>
-      <div>
-        {props.children}
-      </div>
+      {
+        isActiveList &&
+        <div>
+          {rest.children}
+        </div>
+      }
     </Container>
   )
 }

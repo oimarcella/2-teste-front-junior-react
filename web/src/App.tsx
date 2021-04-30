@@ -1,5 +1,7 @@
 import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { RiArrowDownSFill } from 'react-icons/ri';
+import { BiCalendarEvent } from 'react-icons/bi';
 import { MdShowChart } from 'react-icons/md';
 import { BsPeopleFill } from 'react-icons/bs';
 import GlobalStyles from './styles/globalStyles';
@@ -7,8 +9,11 @@ import { Container, Main, Aside } from './styles/styles';
 import Header from './components/Header';
 import BasicCard from './components/BasicCard';
 import LineChart from './components/LineChart';
+import PieChart from './components/PieChart';
 import ListContainer from './components/ListContainer';
 import Item from './components/Item';
+import Filter from './components/Filter';
+import ServiceItem from './components/ServiceItem';
 
 const App: React.FC = () => {
   return (
@@ -23,10 +28,14 @@ const App: React.FC = () => {
               <BasicCard class="basicCard" icon={BsPeopleFill} title="Participantes" text="100 clientes" />
             </header>
             <LineChart class="lineChart" />
-            <div className="pieChart">grafico</div>
+            <PieChart class="pieChart" />
           </Main>
           <Aside>
-            <ListContainer class="listProducts" name="Produtos" text="Mais Vendidos">
+            <div className="filters">
+              <Filter type="Tipo" value="Porcentagem" icon={RiArrowDownSFill} class="filter" />
+              <Filter type="Data" value="Últimos 7 dias" icon={BiCalendarEvent} class="filter" />
+            </div>
+            <ListContainer class="listProducts" name="Produtos" text="Mais Vendidos" openList={true}>
               <Item
                 class="item"
                 name="Coca-Cola"
@@ -86,42 +95,16 @@ const App: React.FC = () => {
               />
             </ListContainer>
             <ListContainer class="listServices" name="Serviços" text="Mais Utilizados">
-              <Item
-                class="item"
-                name="Coca-Cola"
-                quantity={65}
-                price="R$3.50"
-                salePrice="R$2,99"
-                points={150}
-                rescued={33}
-              />
-              <Item
-                class="item"
-                name="Coca-Cola"
-                quantity={65}
-                price="R$3.50"
-                salePrice="R$2,99"
-                points={150}
-                rescued={33}
-              />
-              <Item
-                class="item"
-                name="Coca-Cola"
-                quantity={65}
-                price="R$3.50"
-                salePrice="R$2,99"
-                points={150}
-                rescued={33}
-              />
-              <Item
-                class="item"
-                name="Coca-Cola"
-                quantity={65}
-                price="R$3.50"
-                salePrice="R$2,99"
-                points={150}
-                rescued={33}
-              />
+              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
+              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
+              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
+              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
+              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
+              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
+              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
+              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
+              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
+              <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
             </ListContainer>
           </Aside>
         </div>

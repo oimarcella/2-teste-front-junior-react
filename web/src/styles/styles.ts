@@ -1,18 +1,23 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  @media(min-width:1000px){
+  height: 100%;
+  @media(min-width:1154px){
     &{
-      max-height: 100vh;
+      min-height: 100vh;
     }
   }
   
   
   >div{
     display:flex;
-    max-height: 50%;
-    
-    @media(max-width:1000px){
+     @media(min-width:1154px){
+      &{        
+        height:51.4rem;
+        max-height:80%;
+      }
+    }
+    @media(max-width:1154px){
       &{
         flex-direction:column;
       }
@@ -20,13 +25,13 @@ export const Container = styled.div`
   }
 
   input{
-    @media(min-width:1000px){
+    @media(min-width:1154px){
       &{
         margin: 5px 7px 0 7px;
       }
     }
     
-    @media(max-width:1000px){
+    @media(max-width:1154px){
       &{
         margin:10px;
         width:98%;
@@ -41,10 +46,11 @@ export const Container = styled.div`
   }
 `;
 
+
 export const Main = styled.div`
   width: 100%;
 
-  @media(min-width:1000px){
+  @media(min-width:1154px){
     &{      
       max-width: 800px;
     }
@@ -57,7 +63,7 @@ export const Main = styled.div`
       margin:10px;
     }
 
-    @media(max-width:1000px){
+    @media(max-width:1154px){
       &{
         flex-direction:column;
         .basicCard{
@@ -67,7 +73,7 @@ export const Main = styled.div`
     }
   }
 
-  div.mainChart{ 
+  div.lineChart{
     background:#fff;
     border-radius:5px;
     box-shadow: 6px 3px 5px rgba(0, 0, 0, 0.2);
@@ -80,13 +86,14 @@ export const Main = styled.div`
       }
     }
   }
-  div.chart{
+  div.pieChart{
     background:#fff;
     border-radius:5px;
     box-shadow: 6px 3px 5px rgba(0, 0, 0, 0.2);
-    margin:0 10px 0 10px;
+    margin:10px 10px 0 10px;
+    max-height:40%;
 
-    @media(max-width:1000px){
+    @media(max-width:1154px){
       &{
           margin:0 5px 20px 5px;
       }
@@ -95,16 +102,22 @@ export const Main = styled.div`
 `;
 
 export const Aside = styled.aside`
-  max-height: 100vh;
   flex:1;
 
   display:flex;
   flex-direction:column;
 
   .listProducts{
-    max-height:60%;
+    max-height:50%;
   }
   .listServices{
-    max-height:35%;
+    max-height:40%;
+  }
+  .filters{
+    display:flex;
+    justify-content:flex-end;
+    .filter{
+      margin-right:5px;
+    }
   }
 `;
