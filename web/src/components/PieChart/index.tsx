@@ -1,37 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Pie } from 'react-chartjs-2'
 
-interface LineChartProps {
+interface PieChartProps {
   class: string;
 }
 
-const LineChart: React.FC<LineChartProps> = (props) => {
-  const [chartData, setChartData] = useState({})
-  const chart = () => {
-    setChartData({
-      labels: ['Janeiro', 'Fevereiro', 'Março'],
+const PieChart: React.FC<PieChartProps> = (props) => {
+
+  const configurePieChart = {
+    type: 'pie',
+    data: {
+      labels: ['Taxa de entrega grátis', 'Promoção de Segunda-Feira', 'Promoção de Terça-Feira'],
+      legend: {
+        display: true,
+        position: 'right',
+        align: 'center'
+      },
       datasets: [{
         label: 'Relatório',
-        data: [ 25, 25, 150],
+        data: [25, 25, 150],
         borderColor: ['#ff9e29', '#c47516', '#fc8403'],
         backgroundColor: ['#ff9e29', '#c47516', '#fc8403'],
-        responsive: false,
-        aspectRatio: 1
+
       }],
-      borderWidth: 4,
-    })
+      borderWidth: 4
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: true,
+          position: 'right',
+          align: 'center'
+        },
+        title: {
+          display: true,
+          text: 'Promoções mais utilizadas'
+        }
+      }
+    }
   }
 
-  useEffect(() => {
-    chart()
-  }, [])
+
   return (
     <div className={props.class} style={{
-      maxHeight: "100%",
-      position: "relative"
+      height: "350px",
+      width: "300px"
     }}>
-      <Pie type="Pie" data={chartData} height={1} width={5} />
+      <Pie type={configurePieChart.type} data={configurePieChart.data} options={configurePieChart.options} />
     </div>
   )
 }
-export default LineChart;
+export default PieChart;

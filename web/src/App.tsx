@@ -28,7 +28,9 @@ const App: React.FC = () => {
               <BasicCard class="basicCard" icon={BsPeopleFill} title="Participantes" text="100 clientes" />
             </header>
             <LineChart class="lineChart" />
-            <PieChart class="pieChart" />
+            <div className="pieChartContainer">
+              <PieChart class="pieChart" />
+            </div>
           </Main>
           <Aside>
             <div className="filters">

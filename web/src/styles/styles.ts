@@ -86,12 +86,15 @@ export const Main = styled.div`
       }
     }
   }
-  div.pieChart{
+  div.pieChartContainer{
     background:#fff;
     border-radius:5px;
     box-shadow: 6px 3px 5px rgba(0, 0, 0, 0.2);
     margin:10px 10px 0 10px;
     max-height:40%;
+
+    display:flex;
+    justify-content:center;
 
     @media(max-width:1154px){
       &{
