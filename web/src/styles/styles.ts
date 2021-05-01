@@ -11,9 +11,10 @@ export const Container = styled.div`
   
   >div{
     display:flex;
+    margin-top:10px;
      @media(min-width:1154px){
       &{        
-        height:51.4rem;
+        height:50.4rem;
         max-height:80%;
       }
     }
@@ -42,7 +43,7 @@ export const Container = styled.div`
     padding:10px;
     border: 0.5px solid #707070;
     height:2.5rem;
-    width:32.5%;
+    width:48.5%;
   }
 `;
 
@@ -58,6 +59,7 @@ export const Main = styled.div`
 
   header{
     display:flex;
+    justify-content: space-around;
     
     .basicCard{
       margin:10px;
@@ -91,15 +93,22 @@ export const Main = styled.div`
     border-radius:5px;
     box-shadow: 6px 3px 5px rgba(0, 0, 0, 0.2);
     margin:10px 10px 0 10px;
-    max-height:40%;
+    max-height:35%;
 
     display:flex;
     justify-content:center;
+
 
     @media(max-width:1154px){
       &{
           margin:0 5px 20px 5px;
       }
+    }
+
+    .pieChart{
+      width:50%;
+      display:flex;
+      align-items:center;
     }
   }
 `;
@@ -114,7 +123,7 @@ export const Aside = styled.aside`
     max-height:50%;
   }
   .listServices{
-    max-height:40%;
+    max-height:41%;
   }
   .filters{
     display:flex;

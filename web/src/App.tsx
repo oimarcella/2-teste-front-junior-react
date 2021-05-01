@@ -20,9 +20,9 @@ const App: React.FC = () => {
     <>
       <Container>
         <Header icon={AiOutlineMenu} title="Relatório de Promoções" />
-        <input type="text" placeholder="Procurar um cliente..." />
         <div>
           <Main>
+            <input type="text" placeholder="Procurar um cliente..." />
             <header>
               <BasicCard class="basicCard" icon={MdShowChart} title="Faturamento" text="R$300,00" />
               <BasicCard class="basicCard" icon={BsPeopleFill} title="Participantes" text="100 clientes" />

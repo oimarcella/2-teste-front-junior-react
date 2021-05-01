@@ -10,11 +10,14 @@ const PieChart: React.FC<PieChartProps> = (props) => {
   const configurePieChart = {
     type: 'pie',
     data: {
-      labels: ['Taxa de entrega grátis', 'Promoção de Segunda-Feira', 'Promoção de Terça-Feira'],
+      labels: [
+        'Taxa de entrega grátis (R$300,00)',
+        'Promoção de Segunda-Feira (R$150,00)',
+        'Promoção de Terça-Feira (R$150,00)'],
       legend: {
         display: true,
         position: 'right',
-        align: 'center'
+        align: 'center',
       },
       datasets: [{
         label: 'Relatório',
@@ -28,13 +31,24 @@ const PieChart: React.FC<PieChartProps> = (props) => {
     options: {
       plugins: {
         legend: {
+          title: {
+            display: true,
+            color: '#808080',
+            text: 'Promoções mais utilizadas',
+            padding: 8,
+            font: {
+              size: 14,
+              weight: 'bold'
+            }
+          },
+          labels: {
+            padding: 25,
+            usePointStyle: true,
+          },
           display: true,
+          maxWidth: 300,
           position: 'right',
           align: 'center'
-        },
-        title: {
-          display: true,
-          text: 'Promoções mais utilizadas'
         }
       }
     }
@@ -42,10 +56,7 @@ const PieChart: React.FC<PieChartProps> = (props) => {
 
 
   return (
-    <div className={props.class} style={{
-      height: "350px",
-      width: "300px"
-    }}>
+    <div className={props.class} >
       <Pie type={configurePieChart.type} data={configurePieChart.data} options={configurePieChart.options} />
     </div>
   )
