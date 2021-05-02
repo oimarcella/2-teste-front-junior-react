@@ -146,6 +146,7 @@ export const Aside = styled.aside`
     }
 
     .filter{
+      width:25%;
       margin-right:5px;
     }
   }
