@@ -1,6 +1,9 @@
 
-## Imagens
+## Captura de tela
 ![Screenshot](screen.png)
+
+## Link para visualização
+Projeto hospedado em: https://mytest-eight.vercel.app
 
 ## 🖱 Instalação e Execução
 <p>
