@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerItem = styled.div`
   margin:5px;
+  padding-left:0;
   border-radius:5px;
   border:1px solid #c6c6c6;  
   background:#fff;
@@ -11,6 +12,7 @@ export const ContainerItem = styled.div`
   
   
   div{
+    padding:5px;
     display:flex;
     flex-direction:row;
     justify-content:space-between;
@@ -36,7 +38,10 @@ export const ContainerItem = styled.div`
       flex-direction:column;
       justify-content:center;
       
-      p{
+      p:first-child{
+        text-align: right;
+      }
+      p:nth-child(2){
         display:flex;
         flex-direction:row;
         span{

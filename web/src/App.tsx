@@ -14,8 +14,39 @@ import ListContainer from './components/ListContainer';
 import Item from './components/Item';
 import Filter from './components/Filter';
 import ServiceItem from './components/ServiceItem';
+import { IItemProps as IItem } from './components/Item';
 
 const App: React.FC = () => {
+  const products: Array<IItem> = [
+    {
+      name: 'Coca-Cola',
+      quantity: 23,
+      price: 'R$3,50',
+      salePrice: 'R$2,50'
+    },
+    {
+      name: 'Suco de Limão',
+      quantity: 23
+    },
+    {
+      name: 'Torta de frango',
+      quantity: 10,
+      price: 'R$6,00',
+      points: 5,
+      rescued: 5
+    },
+    {
+      name: 'Pão de queijo',
+      quantity: 23
+    },
+    {
+      name: 'X-Burguer',
+      quantity: 5,
+      price: 'R$15,00',
+      points: 5,
+    }
+  ];
+
   return (
     <>
       <Container>
@@ -34,67 +65,29 @@ const App: React.FC = () => {
           </Main>
           <Aside>
             <div className="filters">
-              <Filter type="Tipo" value="Porcentagem" icon={RiArrowDownSFill} class="filter" />
-              <Filter type="Data" value="Últimos 7 dias" icon={BiCalendarEvent} class="filter" />
+              <Filter options={[
+                'Porcentagem',
+              ]}
+                type="Tipo" icon={RiArrowDownSFill} class="filter" />
+              <Filter options={[
+                'Últimos 30 dias',
+                'Últimos 15 dias'
+              ]}
+                type="Data" icon={BiCalendarEvent} class="filter" />
             </div>
             <ListContainer class="listProducts" name="Produtos" text="Mais Vendidos" openList={true}>
-              <Item
-                class="item"
-                name="Coca-Cola"
-                quantity={65}
-                price="R$3.50"
-                salePrice="R$2,99"
-                points={150}
-                rescued={33}
-              />
-              <Item
-                class="item"
-                name="Suco de Laranja"
-                quantity={65}
-                price="R$3.50"
-                salePrice="R$2,99"
-              />
-              <Item
-                class="item"
-                name="Fanta-Uva"
-                quantity={65}
-                price="R$3.50"
-                salePrice="R$2,99"
-                points={150}
-                rescued={33}
-              />
-              <Item
-                class="item"
-                name="Pão de Queijo"
-                quantity={65}
-                price="R$3.50"
-                salePrice="R$2,99"
-                points={150}
-                rescued={33}
-              />
-              <Item
-                class="item"
-                name="Kibe"
-                quantity={65}
-                price="R$3.50"
-                salePrice="R$2,99"
-              />
-              <Item
-                class="item"
-                name="Misto quente"
-                quantity={35}
-                price="R$42,00"
-                salePrice="R$40,00"
-                points={120}
-                rescued={85}
-              />
-              <Item
-                class="item"
-                name="X-Burguer"
-                quantity={35}
-                price="R$4.50"
-                salePrice="R$3,50"
-              />
+              {
+                products.map(product =>
+                  <Item
+                    name={product.name}
+                    quantity={product.quantity}
+                    price={product.price}
+                    class={product.class}
+                    salePrice={product.salePrice}
+                    points={product.points}
+                    rescued={product.rescued}
+                  />)
+              }
             </ListContainer>
             <ListContainer class="listServices" name="Serviços" text="Mais Utilizados">
               <ServiceItem quantity={23} title="Permite cobrar taxa de entrega" price="R$33,00" />
