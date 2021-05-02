@@ -10,24 +10,20 @@ export const FilterContainer = styled.div`
   flex-direction:column;
   padding:5px;
   width: 100%;
+  min-height: 55px;
+  &:hover{
+    color:#fc8403;
+    cursor: pointer;
+  }
 
   span{
     display:flex;
     justify-content:center;
-
-    svg{
-      cursor:pointer;
-    }
-    svg:hover{
-      color:#fc8403;
-    }
   }
 
   strong.selected-value {
     display:flex;
     justify-content:center;
-    line-height: 1.5;
-    padding: 2px 5px;
     transition: all 200ms ease;
   }
 
@@ -49,6 +45,10 @@ export const FilterContainer = styled.div`
 
   .options.open {
     display: block;
+
+    .option:nth-child(odd){
+      background:#e3e3e3;
+    }
   }
 
   .option {
@@ -56,6 +56,7 @@ export const FilterContainer = styled.div`
     color: rgba(51, 51, 51, 0.8);
     cursor: pointer;
     display: block;
+    height:30px;
     padding: 5px;
   }
 

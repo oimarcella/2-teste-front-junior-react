@@ -26,6 +26,17 @@ export const Container = styled.div`
   }
 
   input{
+    border-radius:5px;
+    padding:10px;
+    border: 0.5px solid #707070;
+    height:2.5rem;
+    width:48.5%;
+    transition: 0.4s border;
+
+    &:focus{
+      border: 2px solid #fc8403;
+    }
+    
     @media(min-width:1154px){
       &{
         margin: 5px 7px 0 7px;
@@ -39,11 +50,6 @@ export const Container = styled.div`
       }
     }
 
-    border-radius:5px;
-    padding:10px;
-    border: 0.5px solid #707070;
-    height:2.5rem;
-    width:48.5%;
   }
 `;
 
@@ -128,6 +134,17 @@ export const Aside = styled.aside`
   .filters{
     display:flex;
     justify-content:flex-end;
+
+    @media(max-width:1154px){
+      &{
+        flex-direction:column;
+        margin:5px;
+        .filter + .filter{
+          margin-top:5px;
+        }
+      }
+    }
+
     .filter{
       margin-right:5px;
     }

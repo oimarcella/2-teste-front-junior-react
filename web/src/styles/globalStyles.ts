@@ -28,6 +28,9 @@ export default createGlobalStyle`
     color:#403f3f;
     -webkit-font-smoothing:antialiased;
   }
+  li {
+    list-style-type: none;
+  }
   a{
     text-decoration: none;
   }

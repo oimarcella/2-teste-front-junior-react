@@ -14,15 +14,15 @@ const Filter: React.FC<FilterProps> = ({ icon: Icon, ...rest }) => {
   const [selected, setSelected] = useState('');
 
   return (
-    <FilterContainer className={rest.class}>
-      <div className="control" onClick={() => setOpen(!open)} >
-        <span >
+    <FilterContainer className={rest.class} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <div className="control" >
+        <span>
           <p>{rest.type}</p>
           {
             Icon && <Icon size={20} />
           }
         </span>
-        <strong className="selected-value">{selected}</strong>
+        <strong className="selected-value">{`${''}` || selected}</strong>
         <div className={`options ${open ? 'open' : null}`}>
           {rest.options.map(option =>
             <div className="option" onClick={() => setSelected(option)}>{option}</div>

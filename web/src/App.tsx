@@ -67,11 +67,13 @@ const App: React.FC = () => {
             <div className="filters">
               <Filter options={[
                 'Porcentagem',
+                'Quantidade'
               ]}
                 type="Tipo" icon={RiArrowDownSFill} class="filter" />
               <Filter options={[
+                ' ',
                 'Últimos 30 dias',
-                'Últimos 15 dias'
+                'Últimos 15 dias',
               ]}
                 type="Data" icon={BiCalendarEvent} class="filter" />
             </div>

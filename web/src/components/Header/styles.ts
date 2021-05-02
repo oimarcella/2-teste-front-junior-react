@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 interface HeaderProps {
   thereIsIcon?: boolean;
@@ -12,14 +12,16 @@ export const ContainerHeader = styled.header<HeaderProps>`
   border-bottom:solid 1px #c6c6c6;
   display:flex;
   align-items:center;
-  
-  svg{
-    ${props =>
-    props.thereIsIcon &&
-    css`
-        margin-left:1rem;
-      `
-  }
+
+  .menuList {
+    li:nth-child(odd){
+      background:#e3e3e3;
+    }
+    li:hover{
+        color:#fc8403;
+        cursor: pointer;
+        font-weight:bold;
+      }
   }
 
   h3{
