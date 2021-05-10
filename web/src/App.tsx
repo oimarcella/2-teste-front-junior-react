@@ -51,7 +51,7 @@ const App: React.FC = () => {
     <>
       <Container>
         <Header icon={AiOutlineMenu} title="Relatório de Promoções" />
-        <div>
+        <div className="dashboard">
           <Main>
             <input type="text" placeholder="Procurar um cliente..." />
             <header>

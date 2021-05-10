@@ -9,9 +9,10 @@ export const Container = styled.div`
   }
   
   
-  >div{
+  >div.dashboard{
     display:flex;
-    margin-top:10px;
+    margin:20px;
+    // background:red;
      @media(min-width:1154px){
       &{        
         height:50.4rem;
@@ -138,7 +139,11 @@ export const Aside = styled.aside`
     @media(max-width:1154px){
       &{
         flex-direction:column;
+        align-items:center;
         margin:5px;
+        .filter{
+          min-width:100%;
+        }
         .filter + .filter{
           margin-top:5px;
         }

@@ -2,6 +2,11 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Marcella L. de A.S. Ananias",
+    "email": "marcella.amorimsa@gmail.com"
+  },
+  "description": "Teste técnico para vaga de desenvolvedora front-end júnior. Março de 2021",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
